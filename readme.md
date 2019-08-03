@@ -1,4 +1,4 @@
-<p align="center"><h2>Blanca</h2></p>
+<p align="center">Blanca</p>
 
 
 ## About Blanca

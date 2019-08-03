@@ -19,5 +19,21 @@ Route::get('/hello', function () {
     return 'hello, world!';
 });
 
-Route::get('/', 'PagesController@index');
+Route::get('/', function () {
+    return view('pages.index');
+});
+
+Route::get('blog/', function () {
+    return view('pages.index');
+});
+
+Route::get('contact/', function () {
+    return view('pages.contact');
+});
+
+Route::get('about/', function () {
+    return view('pages.about');
+});
+
+// Route::get('/', 'PagesController@index');
 

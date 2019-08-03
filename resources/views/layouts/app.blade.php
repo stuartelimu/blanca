@@ -4,12 +4,27 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <!-- FontAwesome CSS -->
+        <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
+        <link rel="stylesheet" href="{{asset('style.css')}}">
 
-        <title>{{config('app.name', 'myapplication')}}</title>
+        <title>{{config('app.name', 'blanca')}}</title>
 
 
     </head>
     <body>
-        @yield('content')
+        <div class="outer-container">
+
+            <!-- header -->
+            @include('inc.header')
+            @yield('content')
+        </div>
+
+        <!-- footer -->
+        @include('inc.footer')
+        <script type='text/javascript' src="{{asset('js/app.js')}}"></script>
+        <script type='text/javascript' src="{{asset('js/swiper.min.js')}}"></script>
+        <script type='text/javascript' src="{{asset('js/custom.js')}}"></script>
     </body>
 </html>
