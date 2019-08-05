@@ -51,7 +51,7 @@
                     </div><!-- .hamburger-menu -->
 
                     <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center">
-                        <li class="current-menu-item"><a href="/">Home</a></li>
+                        <li class="current-menu-item"><a href="/posts">Home</a></li>
                         <li><a href="/about">about me</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>

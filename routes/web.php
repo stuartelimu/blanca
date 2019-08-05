@@ -19,9 +19,9 @@ Route::get('/hello', function () {
     return 'hello, world!';
 });
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+// Route::get('/', function () {
+//     return view('pages.index');
+// });
 
 Route::get('blog/', function () {
     return view('pages.blog');
