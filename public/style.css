@@ -1026,21 +1026,21 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Pagination
 --------------------------------------------------------------*/
-.pagination {
+.my-pagination {
     margin-top: 100px;
 }
 
-.pagination ul {
+.my-pagination ul {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.pagination li {
+.my-pagination li {
     margin-right: 10px;
 }
 
-.pagination li a {
+.my-pagination li a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1052,8 +1052,8 @@ a:hover, a:active {
     text-decoration: none;
 }
 
-.pagination li a:hover,
-.pagination li.active a {
+.my-pagination li a:hover,
+.my-pagination li.active a {
     color: #fff;
     background: #2f2f2f;
 }
