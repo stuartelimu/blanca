@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('blog/', function () {
-    return view('pages.index');
+    return view('pages.blog');
 });
 
 Route::get('contact/', function () {

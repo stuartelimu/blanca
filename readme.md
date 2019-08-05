@@ -1,7 +1,8 @@
-<p align="center">Blanca</p>
+<p align="center"></p>
 
 
-## About Blanca
+## Blanca
+About Blanca
 
 Blanca is apersonal blog web application built with the laravel framework.
 
