@@ -5,7 +5,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="footer-post-wrap flex justify-content-between">
                         <figure>
-                            <a href="#"><img src="images/foot-1.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('images/foot-1.jpg')}}" alt=""></a>
                         </figure>
 
                         <div class="footer-post-cont flex flex-column justify-content-between">
@@ -34,7 +34,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="footer-post-wrap flex justify-content-between">
                         <figure>
-                            <a href="#"><img src="images/foot-2.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('images/foot-2.jpg')}}" alt=""></a>
                         </figure>
 
                         <div class="footer-post-cont flex flex-column justify-content-between">
@@ -63,7 +63,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="footer-post-wrap flex justify-content-between">
                         <figure>
-                            <a href="#"><img src="images/foot-3.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('images/foot-3.jpg')}}" alt=""></a>
                         </figure>
 
                         <div class="footer-post-cont flex flex-column justify-content-between">
@@ -92,7 +92,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="footer-post-wrap flex justify-content-between">
                         <figure>
-                            <a href="#"><img src="images/foot-4.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('images/foot-4.jpg')}}" alt=""></a>
                         </figure>
 
                         <div class="footer-post-cont flex flex-column justify-content-between">
@@ -125,31 +125,31 @@
         <div class="row">
             <div class="footer-instagram flex flex-wrap flex-lg-nowrap">
                 <figure>
-                    <a href="#"><img src="images/a.jpg" alt=""></a>
+                    <a href="#"><img src="{{asset('images/a.jpg')}}" alt=""></a>
                 </figure>
 
                 <figure>
-                    <a href="#"><img src="images/b.jpg" alt=""></a>
+                    <a href="#"><img src="{{asset('images/b.jpg')}}" alt=""></a>
                 </figure>
 
                 <figure>
-                    <a href="#"><img src="images/c.jpg" alt=""></a>
+                    <a href="#"><img src="{{asset('images/c.jpg')}}" alt=""></a>
                 </figure>
 
                 <figure>
-                        <a href="#"><img src="images/d.jpg" alt=""></a>
+                        <a href="#"><img src="{{asset('images/d.jpg')}}" alt=""></a>
                 </figure>
 
                 <figure>
-                    <a href="#"><img src="images/e.jpg" alt=""></a>
+                    <a href="#"><img src="{{asset('images/e.jpg')}}" alt=""></a>
                 </figure>
 
                 <figure>
-                    <a href="#"><img src="images/f.jpg" alt=""></a>
+                    <a href="#"><img src="{{asset('images/f.jpg')}}" alt=""></a>
                 </figure>
 
                 <figure>
-                    <a href="#"><img src="images/g.jpg" alt=""></a>
+                    <a href="#"><img src="{{asset('images/g.jpg')}}" alt=""></a>
                 </figure>
             </div>
         </div><!-- .row -->

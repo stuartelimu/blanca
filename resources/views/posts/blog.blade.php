@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
+
 @section('content')
-
-
-
-    
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="page-header flex justify-content-center align-items-center" style="background-image: url('images/blog-bg.jpg')">
+                <div class="page-header flex justify-content-center align-items-center" style="background-image: url({{asset('images/blog-bg.jpg')}})">
                     <h1>The Story</h1>
                 </div><!-- .page-header -->
             </div><!-- .col -->
@@ -20,7 +17,7 @@
                 <div class="offset-lg-9 col-lg-3">
                     <a href="#">
                         <div class="yt-subscribe">
-                            <img src="images/yt-subscribe.png" alt="Youtube Subscribe">
+                            <img src="{{asset('images/yt-subscribe.png')}}" alt="Youtube Subscribe">
                             <h3>Subscribe</h3>
                             <p>To my Youtube Channel</p>
                         </div><!-- .yt-subscribe -->
@@ -36,10 +33,10 @@
                 <div class="content-wrap">
                     <header class="entry-header">
                         <div class="posted-date">
-                            January 30, 2018
+                            {{$post->created_at->format('F j, Y')}}
                         </div><!-- .posted-date -->
 
-                        <h2 class="entry-title">10 Tips to create a beautiful party</h2>
+                        <h2 class="entry-title">{{$post->title}}</h2>
 
                         <div class="tags-links">
                             <a href="#">#winter</a>
@@ -50,13 +47,13 @@
                     </header><!-- .entry-header -->
 
                     <figure class="featured-image">
-                        <img src="images/blog-image.jpg" alt="">
+                        <img src="{{asset('images/blog-image.jpg')}}" alt="">
                     </figure><!-- .featured-image -->
 
                     <div class="entry-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. Nullam semper ornare quam eu sagittis. Curabitur ornare sem eu dapibus rutrum. Sed lobortis eros ut sapien lobortis, euismod dignissim odio interdum. Integer finibus molestie tellus sit amet egestas. Aliquam ullamcorper magna in ipsum sollicitudin imperdiet consectetur vitae nunc. Maecenas vel erat et erat lobortis porttitor ac id diam. Cras in maximus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                        <p>{{$post->overview}}</p>
 
-                        <p>Pellentesque facilisis lorem sed orci rhoncus, non sagittis sem hendrerit. Nam rhoncus molestie felis, eget laoreet tortor sagittis ac. Pellentesque sapien nunc, vehicula ut tortor sed, gravida tristique magna. Praesent nec finibus est. Maecenas a purus auctor, varius ligula sed, ultricies lacus. Vestibulum erat eros, interdum ut finibus efficitur, efficitur sit amet sem. Proin sed imperdiet arcu, eget auctor turpis.</p>
+                        <p>{{$post->body}}</p>
 
                         <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. </p>
                     </div><!-- .entry-content -->
@@ -65,19 +62,7 @@
                         <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod</p>
                     </blockquote><!-- .blockquote-text -->
 
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <figure class="blog-page-half-img">
-                                <img src="images/blog-img-1.png" alt="">
-                            </figure><!-- .blog-page-half-img -->
-                        </div><!-- .col -->
-
-                        <div class="col-12 col-md-6">
-                            <figure class="blog-page-half-img">
-                                <img src="images/blog-img-2.png" alt="">
-                            </figure><!-- .blog-page-half-img -->
-                        </div><!-- .col -->
-                    </div><!-- .row -->
+                    
 
                     <footer class="entry-footer flex flex-column flex-lg-row justify-content-between align-content-start align-lg-items-center">
                         <ul class="post-share flex align-items-center order-3 order-lg-1">
@@ -103,7 +88,7 @@
                             <li class="comment">
                                 <div class="comment-body flex justify-content-between">
                                     <figure class="comment-author-avatar">
-                                        <img src="images/user-1.jpg" alt="user">
+                                        <img src="{{asset('images/user-1.jpg')}}" alt="user">
                                     </figure><!-- .comment-author-avatar -->
 
                                     <div class="comment-wrap">
@@ -130,7 +115,7 @@
                             <li class="comment">
                                 <div class="comment-body flex justify-content-between">
                                     <figure class="comment-author-avatar">
-                                        <img src="images/user-2.jpg" alt="user">
+                                        <img src="{{asset('images/user-2.jpg')}}" alt="user">
                                     </figure><!-- .comment-author-avatar -->
 
                                     <div class="comment-wrap">
