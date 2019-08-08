@@ -70,15 +70,16 @@
                         </ul><!-- .post-share -->
 
                         <div class="comments-count order-1 order-lg-3">
-                            <a href="#">2 Comments</a>
+                            <a href="#">@if(count($post->comments) > 0) {{count($post->comments)}} Comments @endif</a>
                         </div><!-- .comments-count -->
                     </footer><!-- .entry-footer -->
-
+                    @if(!Auth::guest())
                     <a class="read-more order-2" href="/posts/{{$post->id}}/edit">Edit</a>
                     {{ Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'contact-form']) }}
                         {{Form::hidden('_method', 'DELETE')}}
                         {{Form::submit('Delete')}}
                     {{ Form::close() }}<!-- .contact-form -->
+                    @endif
                 </div><!-- .content-wrap -->
 
                 <div class="content-area">
@@ -86,59 +87,7 @@
                         <h3 class="comments-title">Comments</h3>
 
                         <ol class="comment-list">
-                            <li class="comment">
-                                <div class="comment-body flex justify-content-between">
-                                    <figure class="comment-author-avatar">
-                                        <img src="{{asset('images/user-1.jpg')}}" alt="user">
-                                    </figure><!-- .comment-author-avatar -->
-
-                                    <div class="comment-wrap">
-                                        <div class="comment-author flex flex-wrap align-items-center">
-                                            <span class="fn">
-                                                <a href="#">Maria Williams</a>
-                                            </span><!-- .fn -->
-
-                                            <span class="comment-meta">
-                                                <a href="#">Jan 29, 2018</a>
-                                            </span><!-- .comment-meta -->
-
-                                            <div class="reply">
-                                                <a href="#">Reply</a>
-                                            </div><!-- .reply -->
-                                        </div><!-- .comment-author -->
-
-                                        <p>Consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Su spendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. </p>
-
-                                    </div><!-- .comment-wrap -->
-                                </div><!-- .comment-body -->
-                            </li><!-- .comment -->
-
-                            <li class="comment">
-                                <div class="comment-body flex justify-content-between">
-                                    <figure class="comment-author-avatar">
-                                        <img src="{{asset('images/user-2.jpg')}}" alt="user">
-                                    </figure><!-- .comment-author-avatar -->
-
-                                    <div class="comment-wrap">
-                                        <div class="comment-author flex flex-wrap align-items-center">
-                                            <span class="fn">
-                                                <a href="#">Lisa Moore</a>
-                                            </span><!-- .fn -->
-
-                                            <span class="comment-meta">
-                                                <a href="#">Jan 29, 2018</a>
-                                            </span><!-- .comment-meta -->
-
-                                            <div class="reply">
-                                                <a href="#">Reply</a>
-                                            </div><!-- .reply -->
-                                        </div><!-- .comment-author -->
-
-                                        <p>Consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Su spendisse sit amet laoreet neque. Fusce sagittis suscipit sem a consequat. Proin nec interdum sem. Quisque in porttitor magna, a imperdiet est. Donec accumsan justo nulla, sit amet varius urna laoreet vitae. Maecenas feugiat fringilla metus. </p>
-
-                                    </div><!-- .comment-wrap -->
-                                </div><!-- .comment-body -->
-                            </li><!-- .comment -->
+                            @include('inc.comments',  ['comments' => $post->comments, 'post_id' => $post->id])
                         </ol><!-- .comment-list -->
                     </div><!-- .post-comments -->
 
@@ -146,11 +95,13 @@
                         <div class="comment-respond">
                             <h3 class="comment-reply-title">Leave a reply</h3>
 
-                            <form class="comment-form">
-                                <input type="text" placeholder="Name">
-                                <input type="email" placeholder="Email">
-                                <textarea rows="18" cols="6" placeholder="Messages"></textarea>
-                                <input type="submit" value="Read More">
+                            <form class="comment-form" action="{{ route('comments.store'   ) }}">
+                                @csrf
+                                <input type="text" name="name" placeholder="Name">
+                                <input type="email" name="email" placeholder="Email">
+                                <input type="hidden" name="post_id" value="{{$post->id}}">
+                                <textarea name="message" rows="18" cols="6" placeholder="Messages"></textarea>
+                                <input type="submit" value="Comment">
                             </form><!-- .comment-form -->
                         </div><!-- .comment-respond -->
                     </div><!-- .comments-form -->
@@ -160,3 +111,4 @@
     </div><!-- .container -->
 
 @endsection
+

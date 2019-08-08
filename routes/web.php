@@ -36,9 +36,13 @@ Route::get('admin/', function () {
     return view('pages.admin');
 });
 
+Route::any('posts/search', 'PostsController@search');
+
 Route::get('/', 'PostsController@index');
+Route::get('comment/', 'CommentsController@store')->name('comments.store');
 
 Route::resource('posts', 'PostsController');
+// Route::resource('comments', 'CommentsController');
 
 
 Auth::routes();

@@ -25,8 +25,9 @@
                     </div><!-- .header-bar-social -->
 
                     <div class="header-bar-search d-none d-md-block">
-                        <form>
-                            <input type="search" placeholder="Search">
+                        <form action="/posts/search" method="POST">
+                            {{ csrf_field() }}
+                            <input name='q' type="search" placeholder="Search">
                         </form>
                     </div><!-- .header-bar-search -->
                 </div><!-- .col -->

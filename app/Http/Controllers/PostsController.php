@@ -3,10 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Post;
 
 class PostsController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show', 'search']]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -111,5 +124,13 @@ class PostsController extends Controller
         $post = Post::find($id);
         $post->delete();
         return redirect('/posts')->with('success', 'Post Deleted successfully');
+    }
+
+    public function search(){
+        $q = Input::get ('q');
+        $posts = Post::where('title','LIKE','%'.$q.'%')->orWhere('body','LIKE','%'.$q.'%')->paginate(3);
+        if(count($posts) > 0)
+            return view('posts.results')->with('posts', $posts);
+        else return view ('posts.results')->with('success', 'No Details found. Try to search again !');
     }
 }
