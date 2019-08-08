@@ -18,6 +18,7 @@
 
             <!-- header -->
             @include('inc.header')
+            @include('inc.messages')
             @yield('content')
         </div>
 
