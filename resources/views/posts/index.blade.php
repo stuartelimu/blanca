@@ -125,89 +125,35 @@
                 </div><!-- .about-me -->
 
                 <div class="recent-posts">
-                    <div class="recent-post-wrap">
-                        <figure>
-                            <img src="images/thumb-1.jpg" alt="">
-                        </figure>
+                    
+                    @foreach ($posts as $post)
+                        @if($loop->index < 4)
+                        <div class="recent-post-wrap">
+                            <figure>
+                                <img src="images/thumb-3.jpg" alt="">
+                            </figure>
 
-                        <header class="entry-header">
-                            <div class="posted-date">
-                                January 30, 2018
-                            </div><!-- .entry-header -->
+                            <header class="entry-header">
+                                <div class="posted-date">
+                                    {{$post->created_at->format('F j, Y')}}
+                                </div><!-- .entry-header -->
 
-                            <h3><a href="#">My fall in love story</a></h3>
+                                <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
 
-                            <div class="tags-links">
-                                <a href="#">#winter</a>
-                                <a href="#">#love</a>
-                                <a href="#">#snow</a>
-                                <a href="#">#january</a>
-                            </div><!-- .tags-links -->
-                        </header><!-- .entry-header -->
-                    </div><!-- .recent-post-wrap -->
+                                <div class="tags-links">
+                                    <a href="#">#winter</a>
+                                    <a href="#">#love</a>
+                                    <a href="#">#snow</a>
+                                    <a href="#">#january</a>
+                                </div><!-- .tags-links -->
+                            </header><!-- .entry-header -->
+                        </div><!-- .recent-post-wrap -->
+                        @endif
+                    @endforeach
 
-                    <div class="recent-post-wrap">
-                        <figure>
-                            <img src="images/thumb-2.jpg" alt="">
-                        </figure>
+                    
 
-                        <header class="entry-header">
-                            <div class="posted-date">
-                                January 30, 2018
-                            </div><!-- .entry-header -->
-
-                            <h3><a href="#">My fall in love story</a></h3>
-
-                            <div class="tags-links">
-                                <a href="#">#winter</a>
-                                <a href="#">#love</a>
-                                <a href="#">#snow</a>
-                                <a href="#">#january</a>
-                            </div><!-- .tags-links -->
-                        </header><!-- .entry-header -->
-                    </div><!-- .recent-post-wrap -->
-
-                    <div class="recent-post-wrap">
-                        <figure>
-                            <img src="images/thumb-3.jpg" alt="">
-                        </figure>
-
-                        <header class="entry-header">
-                            <div class="posted-date">
-                                January 30, 2018
-                            </div><!-- .entry-header -->
-
-                            <h3><a href="#">My fall in love story</a></h3>
-
-                            <div class="tags-links">
-                                <a href="#">#winter</a>
-                                <a href="#">#love</a>
-                                <a href="#">#snow</a>
-                                <a href="#">#january</a>
-                            </div><!-- .tags-links -->
-                        </header><!-- .entry-header -->
-                    </div><!-- .recent-post-wrap -->
-
-                    <div class="recent-post-wrap">
-                        <figure>
-                            <img src="images/thumb-4.jpg" alt="">
-                        </figure>
-
-                        <header class="entry-header">
-                            <div class="posted-date">
-                                January 30, 2018
-                            </div><!-- .entry-header -->
-
-                            <h3><a href="#">My fall in love story</a></h3>
-
-                            <div class="tags-links">
-                                <a href="#">#winter</a>
-                                <a href="#">#love</a>
-                                <a href="#">#snow</a>
-                                <a href="#">#january</a>
-                            </div><!-- .tags-links -->
-                        </header><!-- .entry-header -->
-                    </div><!-- .recent-post-wrap -->
+                    
                 </div><!-- .recent-posts -->
 
                 <div class="tags-list">
