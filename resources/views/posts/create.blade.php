@@ -32,8 +32,8 @@
 
                     {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'class' => 'contact-form']) }}
                         {{Form::text('title', '', ['placeholder' => 'Title'])}}
-                        {{Form::textarea('overview', '', ['placeholder' => 'Overview', 'rows'=> '9', 'cols'=> '6'])}}
-                        {{Form::textarea('body', '', ['placeholder' => 'Body', 'rows'=> '18', 'cols'=> '6'])}}
+                        {{Form::textarea('overview', '', ['id'=> 'overview-ckeditor','placeholder' => 'Overview', 'rows'=> '9', 'cols'=> '6'])}}
+                        {{Form::textarea('body', '', ['id'=> 'body-ckeditor','placeholder' => 'Body', 'rows'=> '18', 'cols'=> '6'])}}
                         {{Form::submit('Create')}}
                     {{ Form::close() }}<!-- .contact-form -->
                 </div><!-- .content-wrap -->

@@ -51,9 +51,9 @@
                     </figure><!-- .featured-image -->
 
                     <div class="entry-content">
-                        <p>{{$post->overview}}</p>
+                        <p>{!!$post->overview!!}</p>
 
-                        <p>{{$post->body}}</p>
+                        <p>{!!$post->body!!}</p>
 
                         <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. </p>
                     </div><!-- .entry-content -->

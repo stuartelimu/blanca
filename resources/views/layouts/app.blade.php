@@ -20,6 +20,12 @@
             @include('inc.header')
             @include('inc.messages')
             @yield('content')
+
+            <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+            <script>
+                CKEDITOR.replace( 'overview-ckeditor' );
+                CKEDITOR.replace( 'body-ckeditor' );
+            </script>
         </div>
 
         <!-- footer -->

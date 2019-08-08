@@ -82,7 +82,7 @@
                 </figure><!-- .featured-image -->
 
                 <div class="entry-content">
-                    <p>{{$post->overview}} </p>
+                    <p>{!!$post->overview!!} </p>
                 </div><!-- .entry-content -->
 
                 <footer class="entry-footer flex flex-column flex-lg-row justify-content-between align-content-start align-lg-items-center">
