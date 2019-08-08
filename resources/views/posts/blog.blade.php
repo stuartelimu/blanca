@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 
 @section('content')
@@ -58,13 +58,8 @@
                         <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod, dignissim tortor sed, imperdiet nibh. Donec urna nisl, sodales tincidunt lorem sit amet, vestibulum commodo tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tempor ex sed iaculis vulputate. </p>
                     </div><!-- .entry-content -->
 
-                    <blockquote class="blockquote-text">
-                        <p>Nullam non nisi ut dolor pellentesque eleifend. Aliquam commodo vitae risus malesuada varius. Nulla ornare lacus eu elit sollicitudin varius. Nulla aliquet ornare massa id tempor. Sed luctus dui non turpis sodales, ac tristique risus consequat. Donec tincidunt mi a magna rhoncus dapibus. Integer ut lectus euismod</p>
-                    </blockquote><!-- .blockquote-text -->
 
-                    
-
-                    <footer class="entry-footer flex flex-column flex-lg-row justify-content-between align-content-start align-lg-items-center">
+                    <footer class="entry-footer flex flex-column flex-lg-row justify-content-between align-content-start align-lg-items-center mb-5">
                         <ul class="post-share flex align-items-center order-3 order-lg-1">
                             <label>Share</label>
                             <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
@@ -78,6 +73,12 @@
                             <a href="#">2 Comments</a>
                         </div><!-- .comments-count -->
                     </footer><!-- .entry-footer -->
+
+                    <a class="read-more order-2" href="/posts/{{$post->id}}/edit">Edit</a>
+                    {{ Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'contact-form']) }}
+                        {{Form::hidden('_method', 'DELETE')}}
+                        {{Form::submit('Delete')}}
+                    {{ Form::close() }}<!-- .contact-form -->
                 </div><!-- .content-wrap -->
 
                 <div class="content-area">

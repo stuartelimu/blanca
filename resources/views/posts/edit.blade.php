@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
 
@@ -25,16 +25,17 @@
             <div class="col-12 col-lg-9">
                 <div class="content-wrap">
                     <header class="entry-header">
-                        <h2 class="entry-title">Create Post</h2>
+                        <h2 class="entry-title">Update Post</h2>
 
                         
                     </header><!-- .entry-header -->
 
-                    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'class' => 'contact-form']) }}
-                        {{Form::text('title', '', ['placeholder' => 'Title'])}}
-                        {{Form::textarea('overview', '', ['id'=> 'overview-ckeditor','placeholder' => 'Overview', 'rows'=> '9', 'cols'=> '6'])}}
-                        {{Form::textarea('body', '', ['id'=> 'body-ckeditor','placeholder' => 'Body', 'rows'=> '18', 'cols'=> '6'])}}
-                        {{Form::submit('Create')}}
+                    {{ Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST', 'class' => 'contact-form']) }}
+                        {{Form::text('title', $post->title, ['placeholder' => 'Title'])}}
+                        {{Form::textarea('overview', $post->overview, ['id'=> 'overview-ckeditor','placeholder' => 'Overview', 'rows'=> '9', 'cols'=> '6'])}}
+                        {{Form::textarea('body', $post->body, ['id'=> 'body-ckeditor','placeholder' => 'Body', 'rows'=> '18', 'cols'=> '6'])}}
+                        {{Form::hidden('_method', 'PUT')}}
+                        {{Form::submit('Update')}}
                     {{ Form::close() }}<!-- .contact-form -->
                 </div><!-- .content-wrap -->
             </div><!-- .col -->

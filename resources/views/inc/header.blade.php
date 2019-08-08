@@ -8,7 +8,7 @@
                     </div><!-- .header-bar-text -->
 
                     <div class="header-bar-email d-none d-lg-block">
-                        <a href="#">Contactme@email.com</a>
+                        <a href="#">blanca@gmail.com</a>
                     </div><!-- .header-bar-email -->
                 </div><!-- .col -->
 
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="site-branding flex flex-column align-items-center">
-                    <h1 class="site-title"><a href="index.html" rel="home">Blanca</a></h1>
+                    <h1 class="site-title"><a href="/" rel="home">Blanca</a></h1>
                     <p class="site-description">Personal Blog</p>
                 </div><!-- .site-branding -->
 
@@ -51,7 +51,7 @@
                     </div><!-- .hamburger-menu -->
 
                     <ul class="flex-lg flex-lg-row justify-content-lg-center align-content-lg-center">
-                        <li class="current-menu-item"><a href="/posts">Home</a></li>
+                        <li class="current-menu-item"><a href="/">Blog</a></li>
                         <li><a href="/about">about me</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
