@@ -47,7 +47,7 @@
                     </header><!-- .entry-header -->
 
                     <figure class="featured-image">
-                        <img src="{{asset('images/blog-image.jpg')}}" alt="">
+                        <img src="{{asset('storage/barner_images/'.$post->barner_image) }}" alt="">
                     </figure><!-- .featured-image -->
 
                     <div class="entry-content">

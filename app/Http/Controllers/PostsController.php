@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 
 class PostsController extends Controller
@@ -54,7 +55,9 @@ class PostsController extends Controller
             'title' => 'required',
             'overview' => 'required',
             'body' => 'required',
-            'barner_image' => 'image|nullable|max:1999'
+            'barner_image' => 'image|nullable|max:1999|dimensions:min_width=1600,min_height=900'
+        ], [
+            'barner_image.dimensions' => 'You have to choose an image larger than 1600x900'
         ]);
 
         // fiel upload
@@ -157,6 +160,11 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+
+        if($post->barner_image != 'noimage.jpg') {
+            Storage::delete('public/barner_images/'.$post->barner_image);
+        }
+
         $post->delete();
         return redirect('/posts')->with('success', 'Post Deleted successfully');
     }
