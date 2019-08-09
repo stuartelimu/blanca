@@ -53,8 +53,25 @@ class PostsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'overview' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'barner_image' => 'image|nullable|max:1999'
         ]);
+
+        // fiel upload
+        if($request->hasFile('barner_image')) {
+            // filename with extension
+            $fileNameWithExt = $request->file('barner_image')->getClientOriginalImage();
+            // get file name
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            // GET file extension
+            $ext = $request->file('barner_image')->getOriginalClientExtension();
+            // filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$ext;
+            // upload image
+            $path = $request->file('barner_image')->storeAs('public/barner_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg'
+        }
 
         $post = new Post;
         $post->title = $request->input('title');
