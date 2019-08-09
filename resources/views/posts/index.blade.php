@@ -79,7 +79,7 @@
 
                 <figure class="featured-image">
                     @if($post->barner_image)
-                    <img src="storage/barner_images/{{$post->barner_image}}" alt="">
+                    <img src="{{asset('images/noimage.jpg') }}" alt="">
                     @endif
                 </figure><!-- .featured-image -->
 

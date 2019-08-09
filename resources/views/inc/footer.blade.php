@@ -8,7 +8,7 @@
                 <div class="col-12 col-md-6 col-xl-3">
                     <div class="footer-post-wrap flex justify-content-between">
                         <figure>
-                            <a href="#"><img src="{{asset('storage/barner_images/'.$post->barner_image) }}" alt=""></a>
+                            <a href="#"><img src="{{asset('images/noimage.jpg') }}" alt=""></a>
                         </figure>
 
                         <div class="footer-post-cont flex flex-column justify-content-between">
