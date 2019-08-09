@@ -30,10 +30,11 @@
                         
                     </header><!-- .entry-header -->
 
-                    {{ Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST', 'class' => 'contact-form']) }}
+                    {{ Form::open(['action' => ['PostsController@update', $post->id], 'method' => 'POST', 'class' => 'contact-form', 'enctype' => 'multipart/form-data']) }}
                         {{Form::text('title', $post->title, ['placeholder' => 'Title'])}}
                         {{Form::textarea('overview', $post->overview, ['id'=> 'overview-ckeditor','placeholder' => 'Overview', 'rows'=> '9', 'cols'=> '6'])}}
                         {{Form::textarea('body', $post->body, ['id'=> 'body-ckeditor','placeholder' => 'Body', 'rows'=> '18', 'cols'=> '6'])}}
+                        {{Form::file('barner_image')}}
                         {{Form::hidden('_method', 'PUT')}}
                         {{Form::submit('Update')}}
                     {{ Form::close() }}<!-- .contact-form -->

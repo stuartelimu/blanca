@@ -78,7 +78,9 @@
                 </header><!-- .entry-header -->
 
                 <figure class="featured-image">
-                    <img src="images/1.jpg" alt="">
+                    @if($post->barner_image)
+                    <img src="storage/barner_images/{{$post->barner_image}}" alt="">
+                    @endif
                 </figure><!-- .featured-image -->
 
                 <div class="entry-content">

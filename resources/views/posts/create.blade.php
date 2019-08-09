@@ -30,7 +30,7 @@
                         
                     </header><!-- .entry-header -->
 
-                    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'class' => 'contact-form', 'enctype' => 'multipart/data']) }}
+                    {{ Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'class' => 'contact-form', 'enctype' => 'multipart/form-data']) }}
                         {{Form::text('title', '', ['placeholder' => 'Title'])}}
                         {{Form::textarea('overview', '', ['id'=> 'overview-ckeditor','placeholder' => 'Overview', 'rows'=> '9', 'cols'=> '6'])}}
                         {{Form::textarea('body', '', ['id'=> 'body-ckeditor','placeholder' => 'Body', 'rows'=> '18', 'cols'=> '6'])}}

@@ -60,23 +60,24 @@ class PostsController extends Controller
         // fiel upload
         if($request->hasFile('barner_image')) {
             // filename with extension
-            $fileNameWithExt = $request->file('barner_image')->getClientOriginalImage();
+            $fileNameWithExt = $request->file('barner_image')->getClientOriginalName();
             // get file name
             $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
             // GET file extension
-            $ext = $request->file('barner_image')->getOriginalClientExtension();
+            $ext = $request->file('barner_image')->getClientOriginalExtension();
             // filename to store
             $fileNameToStore = $filename.'_'.time().'.'.$ext;
             // upload image
             $path = $request->file('barner_image')->storeAs('public/barner_images', $fileNameToStore);
         } else {
-            $fileNameToStore = 'noimage.jpg'
+            $fileNameToStore = 'noimage.jpg';
         }
 
         $post = new Post;
         $post->title = $request->input('title');
         $post->overview = $request->input('overview');
         $post->body = $request->input('body');
+        $post->barner_image = $fileNameToStore;
         $post->save();
 
         return redirect('/posts')->with('success', 'Post Created successfully');
@@ -121,10 +122,27 @@ class PostsController extends Controller
             'body' => 'required'
         ]);
 
+        // fiel upload
+        if($request->hasFile('barner_image')) {
+            // filename with extension
+            $fileNameWithExt = $request->file('barner_image')->getClientOriginalName();
+            // get file name
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            // GET file extension
+            $ext = $request->file('barner_image')->getClientOriginalExtension();
+            // filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$ext;
+            // upload image
+            $path = $request->file('barner_image')->storeAs('public/barner_images', $fileNameToStore);
+        }
+
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->overview = $request->input('overview');
         $post->body = $request->input('body');
+        if($request->hasFile('barner_image')) {
+            $post->barner_image = $fileNameToStore;
+        }
         $post->save();
 
         return redirect('/posts/'.$id)->with('success', 'Post Updated successfully');
