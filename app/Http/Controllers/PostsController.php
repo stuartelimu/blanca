@@ -30,7 +30,9 @@ class PostsController extends Controller
     {
         // Post::all()
         $posts = Post::orderBy('created_at', 'desc')->paginate(3);
-        return view('posts.index')->with('posts', $posts);
+        $popular_posts = Post::withCount('comments')->orderBy('comments_count', 'desc')
+->get();
+        return view('posts.index', compact('posts', 'popular_posts'));
     }
 
     /**
@@ -40,7 +42,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $posts = [];
+        return view('posts.create')->with('posts', $posts);
     }
 
     /**
@@ -95,7 +98,8 @@ class PostsController extends Controller
     public function show($id)
     {
         $post= Post::find($id);
-        return view('posts.blog')->with('post', $post);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(3);
+        return view('posts.blog', compact('posts', 'post'));
     }
 
     /**
@@ -107,7 +111,8 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post= Post::find($id);
-        return view('posts.edit')->with('post', $post);
+        $posts = [];
+        return view('posts.edit', compact('post', 'posts'));
     }
 
     /**

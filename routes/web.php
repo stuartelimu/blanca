@@ -25,15 +25,19 @@ Route::get('/hello', function () {
 
 
 Route::get('contact/', function () {
-    return view('pages.contact');
+    $posts = [];
+    return view('pages.contact')->with('posts', $posts);
 });
 
 Route::get('about/', function () {
-    return view('pages.about');
+    $posts = [];
+    return view('pages.about')->with('posts', $posts);
 });
 
 Route::get('admin/', function () {
-    return view('pages.admin');
+
+    $posts = [];
+    return view('pages.admin')->with('posts', $posts);
 });
 
 Route::any('posts/search', 'PostsController@search');

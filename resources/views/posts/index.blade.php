@@ -128,7 +128,7 @@
 
                 <div class="recent-posts">
                     
-                    @foreach ($posts as $post)
+                    @foreach ($popular_posts as $post)
                         @if($loop->index < 4)
                         <div class="recent-post-wrap">
                             <figure>
